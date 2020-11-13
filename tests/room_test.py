@@ -47,3 +47,11 @@ class TestRoom(unittest.TestCase):
     def test_add_songs__single_song(self):
         self.room_1.add_songs(self.song_4)
         self.assertEqual([self.song_4], self.room_1.songs)
+
+    def test_add_songs__both(self):
+        computer_songs_playlist = [self.song_1, self.song_3]
+        self.room_1.add_songs(computer_songs_playlist)
+        self.room_1.add_songs(self.song_4)
+        self.assertEqual([self.song_1, self.song_3, self.song_4], self.room_1.songs)
+
+    
