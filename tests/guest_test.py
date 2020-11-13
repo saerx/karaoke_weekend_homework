@@ -17,6 +17,8 @@ class TestGuest(unittest.TestCase):
         self.guest_3 = Guest("Damon Albarn", 52, 20, self.song_3)
         self.guest_4 = Guest("Jamiroquai", 50, 5, self.song_5)
         self.guest_5 = Guest("Human Child", 8, 20, self.song_2)
+        self.guest_6 = Guest("Jay-Z", 50, 10000, self.song_5)
+        self.guest_7 = Guest("Shania Twain", 55, 80, self.song_1)
 
         self.room_1 = Room("Plush Paradise", 3)
 
@@ -40,5 +42,18 @@ class TestGuest(unittest.TestCase):
         self.room_1.add_songs(big_playlist)
         self.room_1.check_in(self.guest_2)
         result = self.guest_2.check_song_on_playlist(self.room_1)
-        self.assertEqual(f"They have {self.guest_2.favourite_song}! Alright!", result)
+        self.assertEqual(f"They have {self.guest_2.favourite_song.title}! Alright!", result)
+
+    def test_check_song_on_playlist__song_not_on_playlist(self):
+        big_playlist = [self.song_1, self.song_2, self.song_3, self.song_4]
+        self.room_1.add_songs(big_playlist)
+        self.room_1.check_in(self.guest_6)
+        result = self.guest_6.check_song_on_playlist(self.room_1)
+        self.assertIsNone(result)
+
+    def test_check_song_on_playlist__song_on_playlist_guest_not_in_room(self):
+        big_playlist = [self.song_1, self.song_2, self.song_3, self.song_4]
+        self.room_1.add_songs(big_playlist)
+        result = self.guest_2.check_song_on_playlist(self.room_1)
+        self.assertIsNone(result)
 
