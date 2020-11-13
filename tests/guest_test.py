@@ -22,8 +22,6 @@ class TestGuest(unittest.TestCase):
 
         self.room_1 = Room("Plush Paradise", 3)
 
-        
-
 
     def test_guest_has_name(self):
         self.assertEqual("Lovefoxxx", self.guest_1.name)

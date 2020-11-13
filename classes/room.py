@@ -1,3 +1,5 @@
+from classes.song import Song
+
 class Room:
     def __init__(self, name, capacity):
         self.name = name
@@ -17,5 +19,5 @@ class Room:
     def add_songs(self, song_or_playlist):
         if isinstance(song_or_playlist, list):
             self.songs.extend(song_or_playlist)
-        else:
+        elif isinstance(song_or_playlist, Song):
             self.songs.append(song_or_playlist)
