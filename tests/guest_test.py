@@ -54,4 +54,9 @@ class TestGuest(unittest.TestCase):
         self.room_1.add_songs(big_playlist)
         result = self.guest_2.check_song_on_playlist(self.room_1)
         self.assertIsNone(result)
+    
+    def test_remove_cash(self):
+        value = 5
+        self.guest_2.remove_cash(value)
+        self.assertEqual(95, self.guest_2.wallet)
 

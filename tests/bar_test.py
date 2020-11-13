@@ -19,9 +19,9 @@ class TestBar(unittest.TestCase):
             }
         drink_3 = {
             "name": "Tsingtao",
-            "price": 4
+            "price": 4,
             "alcohol_level" : 3
-         }
+            }
     
 
         drinks_list = [drink_1, drink_2, drink_3]
@@ -34,14 +34,17 @@ class TestBar(unittest.TestCase):
 
     def test_bar_has_drinks(self):
         self.assertEqual([{
-            "name": "Guinness",
-            "price": 3
+            "name" : "Guinness",
+            "price": 3,
+            "alcohol_level" : 3
             }, {
             "name": "Whiskey Sour",
-            "price" : 6
+            "price" : 6,
+            "alcohol_level" : 5
             }, {
             "name": "Tsingtao",
-            "price": 4
-         }], self.bar.drinks)
+            "price": 4,
+            "alcohol_level" : 3
+            }], self.bar.drinks)
 
 # [Drink("Guiness", 3, 2), Drink("Whiskey Sour", 6, 4), Drink("Tsingtao", 4, 3)]

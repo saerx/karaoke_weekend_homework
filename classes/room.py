@@ -6,6 +6,7 @@ class Room:
         self.capacity = capacity
         self.songs = []
         self.guests = []
+        self.tab = []
 
 
     def check_in(self, guest):

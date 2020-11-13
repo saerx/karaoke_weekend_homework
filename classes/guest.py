@@ -11,3 +11,7 @@ class Guest:
         if room.guests.count(self) == 1 and room.songs.count(self.favourite_song) > 0:
             return f"They have {self.favourite_song.title}! Alright!"
 
+    def remove_cash(self, value):
+        self.wallet -= value
+
+
