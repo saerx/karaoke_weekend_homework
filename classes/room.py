@@ -14,7 +14,7 @@ class Room:
             self.guests.append(guest)
             new_tab = {
             "name" : guest.name,
-            "tab" : 10
+            "tab_balance" : 10
         }
             guest.remove_cash(10)
             self.tabs.append(new_tab) 

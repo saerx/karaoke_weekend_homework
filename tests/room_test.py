@@ -82,7 +82,7 @@ class TestRoom(unittest.TestCase):
 
     def test_check_in_changes_tab(self):
         self.room_1.check_in(self.guest_1)
-        self.assertEqual(self.room_1.tabs, [{"name" : "Lovefoxxx" , "tab" : 10}])
+        self.assertEqual(self.room_1.tabs, [{"name" : "Lovefoxxx" , "tab_balance" : 10}])
 
     
 

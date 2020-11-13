@@ -4,6 +4,11 @@ class Bar:
         self.drinks = drinks
         
 
+    def find_guest_tab(self, guest, room):
+        for tab in room.tabs:
+            if tab["name"] == guest.name:
+                return tab["tab_balance"]
+
     # def sell_drink(self, guest, drink):
        
     #     if guest.drunkenness < 10:
