@@ -9,15 +9,18 @@ class TestBar(unittest.TestCase):
         
         drink_1 = {
             "name" : "Guinness",
-            "price": 3
+            "price": 3,
+            "alcohol_level" : 3
             }
         drink_2 = {
             "name": "Whiskey Sour",
-            "price" : 6
+            "price" : 6,
+            "alcohol_level" : 5
             }
         drink_3 = {
             "name": "Tsingtao",
             "price": 4
+            "alcohol_level" : 3
          }
     
 
