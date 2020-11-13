@@ -21,3 +21,6 @@ class TestSong(unittest.TestCase):
 
     def test_song_has_run_time(self):
         self.assertEqual([4, 28], self.song_4.run_time)
+
+    def test_song_has_year(self):
+        self.assertEqual(1999, self.song_3.year)

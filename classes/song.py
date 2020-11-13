@@ -4,3 +4,4 @@ class Song:
         self.title = title
         self.artist = artist
         self.run_time = run_time
+        self.year = year
