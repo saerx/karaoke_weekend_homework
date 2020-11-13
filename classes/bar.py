@@ -1,7 +1,7 @@
 class Bar: 
-    def __init__(self, till):
+    def __init__(self, till, drinks):
         self.till = till
-    #     self.drinks = drinks
+        self.drinks = drinks
         
 
     # def sell_drink(self, guest, drink):
