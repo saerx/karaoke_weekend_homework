@@ -18,3 +18,6 @@ class TestSong(unittest.TestCase):
 
     def test_song_has_artist(self):
         self.assertEqual("Wham!", self.song_4.artist)
+
+    def test_song_has_run_time(self):
+        self.assertEqual([4, 28], self.song_4.run_time)
