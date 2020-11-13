@@ -16,7 +16,8 @@ class Room:
             "name" : guest.name,
             "tab" : 10
         }
-            guest.remove_cash(10) 
+            guest.remove_cash(10)
+            self.tabs.append(new_tab) 
 
     def check_out(self, guest):
         self.guests.remove(guest)

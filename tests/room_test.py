@@ -77,6 +77,13 @@ class TestRoom(unittest.TestCase):
         self.room_1.add_songs("cool song")
         self.assertEqual([], self.room_1.songs)
 
+    def test_tabs_start_at_zero(self):
+        self.assertEqual(self.room_1.tabs, [])
+
+    def test_check_in_changes_tab(self):
+        self.room_1.check_in(self.guest_1)
+        self.assertEqual(self.room_1.tabs, [{"name" : "Lovefoxxx" , "tab" : 10}])
+
     
 
 

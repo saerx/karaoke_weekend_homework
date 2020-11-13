@@ -71,6 +71,5 @@ class TestGuest(unittest.TestCase):
         self.guest_2.increase_drunkenness(self.drink_1)
         self.assertEqual(6, self.guest_2.drunkenness)
 
-    def test_tabs_start_at_zero(self):
-        self.assertEqual(self.room_1.tabs, [])
+  
 
