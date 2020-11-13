@@ -6,4 +6,5 @@ class Room:
         self.guests = []
 
 
-    
+    def check_in(self, guest):
+        self.guests.append(guest) 
