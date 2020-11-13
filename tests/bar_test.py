@@ -39,10 +39,7 @@ class TestBar(unittest.TestCase):
 
         self.room_1 = Room("Plush Paradise", 3)
 
-        
-
-    def test_bar_has_till(self):
-        self.assertEqual(500, self.bar.till)
+    
 
     def test_bar_has_drinks(self):
         self.assertEqual([{
@@ -61,7 +58,9 @@ class TestBar(unittest.TestCase):
 
 # [Drink("Guiness", 3, 2), Drink("Whiskey Sour", 6, 4), Drink("Tsingtao", 4, 3)]
 
-    def test_find_guest_tab(self):
+    def test_sell_drink(self):
         self.room_1.check_in(self.guest_1)
-        found_tab = self.bar.find_guest_tab(self.guest_1, self.room_1)
-        self.assertEqual(10, found_tab)
+        self.bar.sell_drink(self.guest_1, self.room_1, self.bar.drinks[0])
+        self.assertEqual(37, self.guest_1.wallet)
+        # self.assertEqual(3, guest.drunkenness)
+        self.assertEqual(13, self.room_1.tabs[0]["tab_balance"])
