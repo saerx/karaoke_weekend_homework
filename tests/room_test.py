@@ -39,6 +39,11 @@ class TestRoom(unittest.TestCase):
         self.room_1.check_in(self.guest_3)
         self.assertEqual([self.guest_3], self.room_1.guests)
 
+    def test_check_in__below_capacity_and_doesnt_have_enough_money(self):
+        self.room_1.check_in(self.guest_3)
+        self.room_1.check_in(self.guest_4)
+        self.assertEqual([self.guest_3], self.room_1.guests)
+
     def test_check_in__at_capacity(self):
         self.room_1.check_in(self.guest_1)
         self.room_1.check_in(self.guest_2)
