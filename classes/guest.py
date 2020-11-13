@@ -4,7 +4,7 @@ class Guest:
         self.age = age
         self.wallet = wallet
         self.favourite_song = favourite_song
-        self.drinks = []
+        self.drunkenness = 0
 
 
     def check_song_on_playlist(self, room):
