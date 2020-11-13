@@ -6,13 +6,17 @@ class Room:
         self.capacity = capacity
         self.songs = []
         self.guests = []
-        self.tab = []
+        self.tabs = []
 
 
     def check_in(self, guest):
         if guest.wallet >= 10 and len(self.guests) < self.capacity:
             self.guests.append(guest)
-            guest.wallet -= 10 
+            new_tab = {
+            "name" : guest.name,
+            "tab" : 10
+        }
+            guest.remove_cash(10) 
 
     def check_out(self, guest):
         self.guests.remove(guest)

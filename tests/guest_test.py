@@ -61,8 +61,9 @@ class TestGuest(unittest.TestCase):
         result = self.guest_2.check_song_on_playlist(self.room_1)
         self.assertIsNone(result)
     
-    def test_pay_for_drink(self):
-        self.guest_2.pay_for_drink(self.drink_1)
+    def test_remove_cash(self):
+        value = self.drink_1["price"]
+        self.guest_2.remove_cash(value)
         self.assertEqual(97, self.guest_2.wallet)
 
     def test_increase_drunkenness(self):

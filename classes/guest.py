@@ -11,8 +11,8 @@ class Guest:
         if room.guests.count(self) == 1 and room.songs.count(self.favourite_song) > 0:
             return f"They have {self.favourite_song.title}! Alright!"
 
-    def pay_for_drink(self, drink):
-        self.wallet -= drink["price"]
+    def remove_cash(self, value):
+        self.wallet -= value
 
     def increase_drunkenness(self, drink):
         self.drunkenness += drink["alcohol_level"]

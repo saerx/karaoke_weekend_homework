@@ -4,8 +4,10 @@ class Bar:
         self.drinks = drinks
         
 
-    def sell_drink(self, guest, drink):
-        if guest.drunkenness < 10:
-            self.till += drink.price
-            guest.remove_cash(drink["price"])
-            guest.increase_drunkenness(drink)
+    # def sell_drink(self, guest, drink):
+       
+    #     if guest.drunkenness < 10:
+    #         self.till += drink.price
+    #         guest.remove_cash(drink["price"])
+    #         guest.increase_drunkenness(drink["alcohol_level"])
+    #         new_tab["tab"] += drink["price"]
