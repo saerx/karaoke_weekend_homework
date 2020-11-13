@@ -14,4 +14,7 @@ class Guest:
     def remove_cash(self, value):
         self.wallet -= value
 
+    def increase_drunkenness(self, drink):
+        self.drunkenness += drink["alcohol_level"]
+
 

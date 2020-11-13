@@ -22,6 +22,12 @@ class TestGuest(unittest.TestCase):
 
         self.room_1 = Room("Plush Paradise", 3)
 
+        self.drink_1 = {
+            "name" : "Guinness",
+            "price": 3,
+            "alcohol_level" : 3
+            }
+
 
     def test_guest_has_name(self):
         self.assertEqual("Lovefoxxx", self.guest_1.name)
@@ -59,4 +65,9 @@ class TestGuest(unittest.TestCase):
         value = 5
         self.guest_2.remove_cash(value)
         self.assertEqual(95, self.guest_2.wallet)
+
+    def test_increase_drunkenness(self):
+        self.guest_2.increase_drunkenness(self.drink_1)
+        self.guest_2.increase_drunkenness(self.drink_1)
+        self.assertEqual(6, self.guest_2.drunkenness)
 
