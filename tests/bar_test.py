@@ -4,27 +4,31 @@ from classes.bar import Bar
 from classes.guest import Guest
 from classes.room import Room
 from classes.song import Song
-# from classes.drink import Drink
+from classes.drink import Drink
 
 
 class TestBar(unittest.TestCase):
     def setUp(self):
+
+        drink_1 = Drink("Guinness", 3, 3)
+        drink_2 = Drink("Whiskey Sour", 6, 5)
+        drink_3 = Drink("Tsingtao", 4, 3)
         
-        drink_1 = {
-            "name" : "Guinness",
-            "price": 3,
-            "alcohol_level" : 3
-            }
-        drink_2 = {
-            "name": "Whiskey Sour",
-            "price" : 6,
-            "alcohol_level" : 5
-            }
-        drink_3 = {
-            "name": "Tsingtao",
-            "price": 4,
-            "alcohol_level" : 3
-            }
+        # drink_1 = {
+        #     "name" : "Guinness",
+        #     "price": 3,
+        #     "alcohol_level" : 3
+        #     }
+        # drink_2 = {
+        #     "name": "Whiskey Sour",
+        #     "price" : 6,
+        #     "alcohol_level" : 5
+        #     }
+        # drink_3 = {
+        #     "name": "Tsingtao",
+        #     "price": 4,
+        #     "alcohol_level" : 3
+        #     }
 
     
         drinks_list = [drink_1, drink_2, drink_3]
@@ -42,19 +46,20 @@ class TestBar(unittest.TestCase):
     
 
     def test_bar_has_drinks(self):
-        self.assertEqual([{
-            "name" : "Guinness",
-            "price": 3,
-            "alcohol_level" : 3
-            }, {
-            "name": "Whiskey Sour",
-            "price" : 6,
-            "alcohol_level" : 5
-            }, {
-            "name": "Tsingtao",
-            "price": 4,
-            "alcohol_level" : 3
-            }], self.bar.drinks)
+        # self.assertEqual([{
+        #     "name" : "Guinness",
+        #     "price": 3,
+        #     "alcohol_level" : 3
+        #     }, {
+        #     "name": "Whiskey Sour",
+        #     "price" : 6,
+        #     "alcohol_level" : 5
+        #     }, {
+        #     "name": "Tsingtao",
+        #     "price": 4,
+        #     "alcohol_level" : 3
+        #     }], self.bar.drinks)
+        self.assertEqual(3, len(self.bar.drinks))
 
 # [Drink("Guiness", 3, 2), Drink("Whiskey Sour", 6, 4), Drink("Tsingtao", 4, 3)]
 
