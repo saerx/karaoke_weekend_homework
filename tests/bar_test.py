@@ -60,6 +60,7 @@ class TestBar(unittest.TestCase):
         #     "alcohol_level" : 3
         #     }], self.bar.drinks)
         self.assertEqual(3, len(self.bar.drinks))
+        self.assertIsInstance(self.bar.drinks[0], Drink)
 
 # [Drink("Guiness", 3, 3), Drink("Whiskey Sour", 6, 4), Drink("Tsingtao", 4, 3)]
 

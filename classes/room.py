@@ -1,4 +1,5 @@
 from classes.song import Song
+from classes.tab import Tab
 
 class Room:
     def __init__(self, name, capacity):
@@ -12,10 +13,7 @@ class Room:
     def check_in(self, guest):
         if guest.wallet >= 10 and len(self.guests) < self.capacity:
             self.guests.append(guest)
-            new_tab = {
-            "name" : guest.name,
-            "tab_balance" : 10
-        }
+            new_tab = Tab(guest.name, 10)
             guest.remove_cash(10)
             self.tabs.append(new_tab) 
 

@@ -3,6 +3,7 @@ import unittest
 from classes.room import Room
 from classes.guest import Guest 
 from classes.song import Song
+from classes.tab import Tab
 
 
 class TestRoom(unittest.TestCase):
@@ -82,7 +83,9 @@ class TestRoom(unittest.TestCase):
 
     def test_check_in_changes_tab(self):
         self.room_1.check_in(self.guest_1)
-        self.assertEqual(self.room_1.tabs, [{"name" : "Lovefoxxx" , "tab_balance" : 10}])
+        self.room_1.check_in(self.guest_2)
+        self.assertEqual(len(self.room_1.tabs), 2)
+        self.assertIsInstance(self.room_1.tabs[0], Tab)
 
     
 
