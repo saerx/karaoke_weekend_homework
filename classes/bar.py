@@ -8,6 +8,8 @@ class Bar:
             if drink.name == requested_drink:
                 return drink
 
+    
+
     # def sell_drink(self, guest, room, drink):
     #     if guest.drunkenness < 10:
     #         found_drink = find_drink_by_name(self, drink)
