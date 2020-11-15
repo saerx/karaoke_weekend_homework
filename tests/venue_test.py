@@ -61,3 +61,7 @@ class TestVenue(unittest.TestCase):
         self.venue_1.admit_guest(self.guest_6, self.room_1)
         self.venue_1.admit_guest(self.guest_7, self.room_1)
         self.assertEqual([self.guest_1, self.guest_2, self.guest_3], self.room_1.guests)
+
+    def test_admit_guest_adds_to_active_rooms_in_bar(self):
+        self.venue_1.admit_guest(self.guest_1, self.room_1)
+        self.assertEqual(1, len(self.venue_1.bar.active_rooms))
