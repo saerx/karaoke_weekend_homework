@@ -14,23 +14,6 @@ class TestBar(unittest.TestCase):
         drink_2 = Drink("Whiskey Sour", 6, 5)
         drink_3 = Drink("Tsingtao", 4, 3)
         
-        # drink_1 = {
-        #     "name" : "Guinness",
-        #     "price": 3,
-        #     "alcohol_level" : 3
-        #     }
-        # drink_2 = {
-        #     "name": "Whiskey Sour",
-        #     "price" : 6,
-        #     "alcohol_level" : 5
-        #     }
-        # drink_3 = {
-        #     "name": "Tsingtao",
-        #     "price": 4,
-        #     "alcohol_level" : 3
-        #     }
-
-    
         drinks_list = [drink_1, drink_2, drink_3]
 
         self.bar = Bar(500, drinks_list)
@@ -46,24 +29,9 @@ class TestBar(unittest.TestCase):
     
 
     def test_bar_has_drinks(self):
-        # self.assertEqual([{
-        #     "name" : "Guinness",
-        #     "price": 3,
-        #     "alcohol_level" : 3
-        #     }, {
-        #     "name": "Whiskey Sour",
-        #     "price" : 6,
-        #     "alcohol_level" : 5
-        #     }, {
-        #     "name": "Tsingtao",
-        #     "price": 4,
-        #     "alcohol_level" : 3
-        #     }], self.bar.drinks)
+
         self.assertEqual(3, len(self.bar.drinks))
         self.assertIsInstance(self.bar.drinks[0], Drink)
-
-# [Drink("Guiness", 3, 3), Drink("Whiskey Sour", 6, 4), Drink("Tsingtao", 4, 3)]
-
 
     def test_find_drink_by_name(self):
         found_drink = self.bar.find_drink_by_name("Guinness")
