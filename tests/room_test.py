@@ -4,6 +4,8 @@ from classes.room import Room
 from classes.guest import Guest 
 from classes.song import Song
 from classes.tab import Tab
+from classes.bar import Bar
+from classes.drink import Drink
 
 
 class TestRoom(unittest.TestCase):
@@ -24,6 +26,14 @@ class TestRoom(unittest.TestCase):
         self.guest_6 = Guest("Jay-Z", 50, 10000, self.song_5)
         self.guest_7 = Guest("Shania Twain", 55, 80, self.song_1)
 
+        drink_1 = Drink("Guinness", 3, 3)
+        drink_2 = Drink("Whiskey Sour", 6, 5)
+        drink_3 = Drink("Tsingtao", 4, 3)
+        
+        drinks_list = [drink_1, drink_2, drink_3]
+
+        self.bar_1 = Bar(500, drinks_list)
+
         
     def test_room_has_name(self):
         self.assertEqual("Plush Paradise", self.room_1.name)
@@ -31,19 +41,19 @@ class TestRoom(unittest.TestCase):
     def test_room_has_capacity(self):
         self.assertEqual(3, self.room_1.capacity)
 
-    def test_check_in__below_capacity_and_has_enough_money(self):
+    def test_check_in__below_capacity(self):
         self.room_1.check_in(self.guest_1)
         self.room_1.check_in(self.guest_2)
         self.assertEqual([self.guest_1, self.guest_2], self.room_1.guests)
 
-    def test_check_in__below_capacity_and_has_exact_money(self):
-        self.room_1.check_in(self.guest_3)
-        self.assertEqual([self.guest_3], self.room_1.guests)
+    # def test_check_in__below_capacity_and_has_exact_money(self):
+    #     self.room_1.check_in(self.guest_3)
+    #     self.assertEqual([self.guest_3], self.room_1.guests)
 
-    def test_check_in__below_capacity_and_doesnt_have_enough_money(self):
-        self.room_1.check_in(self.guest_2)
-        self.room_1.check_in(self.guest_4)
-        self.assertEqual([self.guest_2], self.room_1.guests)
+    # def test_check_in__below_capacity_and_doesnt_have_enough_money(self):
+    #     self.room_1.check_in(self.guest_2)
+    #     self.room_1.check_in(self.guest_4)
+    #     self.assertEqual([self.guest_2], self.room_1.guests)
 
     def test_check_in__at_capacity(self):
         self.room_1.check_in(self.guest_1)
@@ -87,6 +97,7 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(len(self.room_1.tabs), 2)
         self.assertIsInstance(self.room_1.tabs[0], Tab)
 
+   
     
 
 
