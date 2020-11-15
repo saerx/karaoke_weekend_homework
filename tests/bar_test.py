@@ -61,11 +61,19 @@ class TestBar(unittest.TestCase):
         #     }], self.bar.drinks)
         self.assertEqual(3, len(self.bar.drinks))
 
-# [Drink("Guiness", 3, 2), Drink("Whiskey Sour", 6, 4), Drink("Tsingtao", 4, 3)]
+# [Drink("Guiness", 3, 3), Drink("Whiskey Sour", 6, 4), Drink("Tsingtao", 4, 3)]
 
-    def test_sell_drink(self):
-        self.room_1.check_in(self.guest_1)
-        self.bar.sell_drink(self.guest_1, self.room_1, self.bar.drinks[0])
-        self.assertEqual(37, self.guest_1.wallet)
-        # self.assertEqual(3, guest.drunkenness)
-        self.assertEqual(13, self.room_1.tabs[0]["tab_balance"])
+
+    def test_find_drink_by_name(self):
+        found_drink = self.bar.find_drink_by_name("Guinness")
+        self.assertEqual(found_drink.name, "Guinness")
+        self.assertEqual(found_drink.price, 3)
+        self.assertEqual(found_drink.alcohol_level, 3)
+        
+       
+    # def test_sell_drink(self):
+    #     self.room_1.check_in(self.guest_1)
+    #     self.bar.sell_drink(self.guest_1, self.room_1, self.bar.drinks[0])
+    #     self.assertEqual(37, self.guest_1.wallet)
+    #     # self.assertEqual(3, guest.drunkenness)
+    #     self.assertEqual(13, self.room_1.tabs[0]["tab_balance"])
